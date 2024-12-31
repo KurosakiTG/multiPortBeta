@@ -28,7 +28,7 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 KEY="2145515560:AAE9WqfxZzQC-FYF1VUprICGNomVfv6OdTU"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-REPO="https://raw.githubusercontent.com/NevermoreSSH/VVV/main/"
+REPO="https://raw.githubusercontent.com/KurosakiTG/multiPortBeta/main/"
 APT="apt-get -y install "
 domain=$(cat /root/domain)
 start=$(date +%s)
@@ -90,12 +90,12 @@ function base_package() {
     sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
     sysctl -w net.ipv6.conf.default.disable_ipv6=1  >/dev/null 2>&1
     sudo apt install software-properties-common -y
-    sudo add-apt-repository ppa:vbernat/haproxy-2.7 -y
+    sudo add-apt-repository ppa:vbernat/haproxy-3.0 -y
     sudo apt update && apt upgrade -y
     # linux-tools-common util-linux gnupg gnupg2 gnupg1  \
     sudo apt install squid nginx zip pwgen openssl netcat bash-completion  \
     curl socat xz-utils wget apt-transport-https dnsutils socat \
-    tar wget curl ruby zip unzip p7zip-full python3-pip haproxy libc6  \
+    tar wget curl ruby zip unzip p7zip-full python3-pip haproxy=3.0.\* libc6  \
     msmtp-mta ca-certificates bsd-mailx iptables iptables-persistent netfilter-persistent \
     net-tools  jq openvpn easy-rsa python3-certbot-nginx p7zip-full tuned fail2ban -y
     apt-get clean all; sudo apt-get autoremove -y
@@ -140,7 +140,7 @@ function pasang_ssl() {
     mkdir /root/.acme.sh
     systemctl stop $STOPWEBSERVER
     systemctl stop nginx
-    curl https://raw.githubusercontent.com/NevermoreSSH/VVV/main/acme.sh -o /root/.acme.sh/acme.sh
+    curl https://raw.githubusercontent.com/KurosakiTG/multiPortBeta/main/acme.sh -o /root/.acme.sh/acme.sh
     chmod +x /root/.acme.sh/acme.sh
     /root/.acme.sh/acme.sh --upgrade --auto-upgrade
     /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
