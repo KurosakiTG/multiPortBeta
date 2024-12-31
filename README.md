@@ -12,13 +12,13 @@ Update Debian 9/10/11
 Update Ubuntu 18/20
 <pre><code>apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && sleep 2 && reboot</code></pre>
 Script Setup ( ipv4 only )
-<pre><code>apt install -y wget screen && wget -q https://raw.githubusercontent.com/NevermoreSSH/VVV/main/main.sh && chmod +x main.sh && screen -S install ./main.sh</code></pre>
+<pre><code>apt install -y wget screen && wget -q https://raw.githubusercontent.com/KurosakiTG/multiPortBeta/main/main.sh && chmod +x main.sh && screen -S install ./main.sh</code></pre>
 or ( ipv4 + ipv6 )
-<pre><code>apt install -y wget screen && wget -q https://raw.githubusercontent.com/NevermoreSSH/VVV/main/setup2.sh && chmod +x setup2.sh && screen -S install ./setup2.sh</code></pre>
+<pre><code>apt install -y wget screen && wget -q https://raw.githubusercontent.com/KurosakiTG/multiPortBeta/main/setup2.sh && chmod +x setup2.sh && screen -S install ./setup2.sh</code></pre>
 
 
 Update Menu
-<pre><code>wget -q -O /usr/sbin/updatemenu "https://raw.githubusercontent.com/NevermoreSSH/VVV/main/update/updatemenu.sh" && chmod +x /usr/sbin/updatemenu && updatemenu</code></pre>
+<pre><code>wget -q -O /usr/sbin/updatemenu "https://raw.githubusercontent.com/KurosakiTG/multiPortBeta/main/update/updatemenu.sh" && chmod +x /usr/sbin/updatemenu && updatemenu</code></pre>
 
 
 If problem "ERROR: The certificate of 'raw.githubusercontent.com' is not trusted"
@@ -85,3 +85,5 @@ The solution simple install: `apt-get install ca-certificates`
 
 ### Credits
 - [Dharak36](https://github.com/dharak36/Xray-core)
+- NeverMoreSSH
+- KurosakiTG
